@@ -160,5 +160,5 @@ cython_debug/
 #.idea/
 
 # CSV and XSXL files
-*.csv
+links2.csv
 *.xsxl

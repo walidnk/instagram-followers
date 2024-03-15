@@ -63,12 +63,12 @@ class Insta_Info_Scraper:
         date = f'Sent 1st - {formatted_date}'
         # for url in self.content:
         for idx, row in self.content.iterrows():
-            url = row['Link de Instagram']
+            url = row['user_links']
             if url != '':
                 time.sleep(5)
                 name, followers = self.getinfo(url)
                 profile_df.loc[len(profile_df.index)] = [
-                    name, row['Categoria'], ' ', url, ' ', date, followers]
+                    name, row['category'], ' ', url, ' ', date, followers]
         profile_df.to_excel(
             f'Lista {datetime.now().strftime("%Y-%m-%d %H-%M-%S")}.xlsx')
 
